@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  {% include nav.html %}
+
+  <main>
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+  {% if page.hero %}<script type="module" src="{{ '/assets/js/hero-cootie.js' | relative_url }}"></script>{% endif %}
+</body>
+</html>

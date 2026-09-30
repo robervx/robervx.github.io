@@ -1,0 +1,64 @@
+title: "Rober Cerdán"
+description: >-
+  Public Safety · Urban Intelligence · Data & AI Lab. Un laboratorio personal
+  donde prototipo herramientas, dashboards y modelos predictivos aplicados a
+  ciudad, seguridad pública, datos, IA y gestión de producto.
+url: "https://robervx.github.io"
+baseurl: ""
+lang: es
+
+# We ship a fully custom design (layouts/includes/assets below), so opt out
+# of the github-pages gem's default theme (jekyll-theme-primer).
+theme: null
+
+author:
+  name: "Rober Cerdán"
+  github: "https://github.com/robervx"
+  substack: "https://elpuenteazul.substack.com/"
+
+# --- Markdown / syntax highlighting -----------------------------------
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+# --- Collections ---------------------------------------------------------
+# Every project lives as one Markdown file in _projects/. Adding a project
+# is just: create a new file with the right front matter. No other file
+# needs to be touched — the homepage and index pages read this collection.
+collections:
+  projects:
+    output: true
+    permalink: /projects/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+sass:
+  style: compressed
+  sass_dir: assets/css
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules
+  - "*.gemspec"

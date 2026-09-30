@@ -1,0 +1,40 @@
+{%- comment -%}
+Renders one project card. Usage:
+  {% include project-card.html project=p variant="featured" %}
+  {% include project-card.html project=p variant="lab" %}
+{%- endcomment -%}
+{% assign p = include.project %}
+{% assign variant = include.variant | default: "lab" %}
+{% assign card_class = "lab-card" %}
+{% if variant == "featured" %}{% assign card_class = "featured-card" %}{% endif %}
+
+<article class="{{ card_class }}" data-tags="{{ p.tags | join: ' ' }}">
+  {% if variant == "featured" %}
+  <div class="card-topline">
+    <span class="status {{ p.status }}" data-es="{{ p.status_es }}" data-en="{{ p.status_en }}">{{ p.status_es }}</span>
+    <span class="small-label">{{ p.kicker | default: "Current Work" }}</span>
+  </div>
+  {% else %}
+  <span class="status {{ p.status }}" data-es="{{ p.status_es }}" data-en="{{ p.status_en }}">{{ p.status_es }}</span>
+  {% endif %}
+
+  <h3 data-es="{{ p.title_es }}" data-en="{{ p.title_en }}">{{ p.title_es }}</h3>
+
+  <p data-es="{{ p.summary_es }}" data-en="{{ p.summary_en }}">{{ p.summary_es }}</p>
+
+  {% if p.tech and p.tech.size > 0 %}
+  <div class="tech-row">
+    {% for key in p.tech limit: 5 %}
+      {% include tech-icon.html key=key %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="tags">
+    {% for pill in p.tag_pills %}
+      <span class="tag {{ pill.group }}">{{ pill.label }}</span>
+    {% endfor %}
+  </div>
+
+  <a class="project-link" href="{{ p.url | relative_url }}" data-es="Ver proyecto →" data-en="View project →">Ver proyecto →</a>
+</article>
