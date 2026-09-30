@@ -17,7 +17,7 @@ Then open http://127.0.0.1:4000.
 
 Every project on the site — the "Current Work" and "Lab" cards on the homepage, and its own detail page — comes from a single Markdown file in `_projects/`. To add one:
 
-1. Create `_projects/my-project.md` with front matter (copy an existing file as a starting point, e.g. `_projects/patrullas-valencia.md` for a rich example with code blocks and an interactive widget, or `_projects/city-monitor.md` for a minimal one):
+1. Create `_projects/my-project.md` with front matter (copy an existing file as a starting point, e.g. `_projects/patrullas-valencia.md` for a rich example with code blocks and an interactive widget, or `_projects/focus.md` for a minimal one):
 
    ```yaml
    ---
