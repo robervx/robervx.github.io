@@ -1,0 +1,67 @@
+backend:
+  name: github
+  repo: robervx/robervx.github.io
+  branch: main
+
+site_url: https://robervx.github.io
+display_url: https://robervx.github.io
+logo_url: /assets/images/projects/mirall-cover.svg
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+  - name: "projects"
+    label: "Proyectos"
+    label_singular: "Proyecto"
+    description: "Cada entrada es un proyecto del Lab. Se muestra en la home y en su propia página."
+    folder: "_projects"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    summary: "{{title_es}} — {{status_es}}"
+    sortable_fields: ["date", "title_es", "status"]
+    fields:
+      - { label: "Título (pestaña del navegador / buscadores)", name: "title", widget: "string" }
+      - { label: "Título (Español)", name: "title_es", widget: "string" }
+      - { label: "Título (Inglés)", name: "title_en", widget: "string" }
+      - { label: "Resumen (Español)", name: "summary_es", widget: "text" }
+      - { label: "Resumen (Inglés)", name: "summary_en", widget: "text" }
+      - { label: "Descripción para buscadores (opcional)", name: "description", widget: "text", required: false }
+      - label: "Estado"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "En desarrollo", value: "in-progress" }
+          - { label: "Prototipo", value: "prototype" }
+          - { label: "Concepto", value: "concept" }
+          - { label: "No disponible", value: "unavailable" }
+      - { label: "Estado — texto en Español", name: "status_es", widget: "string", hint: "Ej: En desarrollo, Prototipo, Concepto, No disponible" }
+      - { label: "Estado — texto en Inglés", name: "status_en", widget: "string", hint: "Ej: In progress, Prototype, Concept, Not available" }
+      - { label: "Destacar (tarjeta grande con imagen en el Lab)", name: "featured", widget: "boolean", default: false }
+      - { label: "Fecha", name: "date", widget: "date" }
+      - { label: "Etiqueta superior (solo si está destacado)", name: "kicker", widget: "string", required: false, hint: "Ej: Urban Intelligence Platform · Data Science · Python" }
+      - { label: "Imagen de portada (solo se usa si está destacado)", name: "cover_image", widget: "image", required: false }
+      - label: "Tags de filtro"
+        name: "tags"
+        widget: "list"
+        required: false
+        hint: "Una palabra-clave por línea, en minúsculas y con guiones: urban-intelligence, python, geospatial-analysis..."
+      - label: "Etiquetas visibles en la tarjeta"
+        name: "tag_pills"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Texto", name: "label", widget: "string" }
+          - label: "Color"
+            name: "group"
+            widget: "select"
+            options: ["data", "ai", "urban", "comm", "product"]
+      - label: "Tecnologías usadas"
+        name: "tech"
+        widget: "list"
+        required: false
+        hint: "Claves definidas en _data/tech.yml: python, r, sql, pandas, scikit-learn, xgboost, typescript, maplibre, deckgl, pwa, git, github..."
+      - { label: "Enlace al repositorio de GitHub (opcional)", name: "repo_url", widget: "string", required: false }
+      - { label: "Enlace a demo en vivo (opcional)", name: "demo_url", widget: "string", required: false }
+      - { label: "Contenido del proyecto", name: "body", widget: "markdown" }
