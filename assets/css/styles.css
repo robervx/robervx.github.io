@@ -387,6 +387,11 @@ h3 {
   color: #715c2f;
 }
 
+.status.unavailable {
+  background: #eae6df;
+  color: #82796c;
+}
+
 .tags,
 .tag-cloud {
   display: flex;
