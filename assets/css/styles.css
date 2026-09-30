@@ -206,8 +206,7 @@ h3 {
   box-shadow: 0 18px 40px rgba(31, 31, 31, 0.035);
 }
 
-.signal-icon,
-.visual-icon {
+.signal-icon {
   width: 42px;
   height: 42px;
   min-width: 42px;
@@ -280,6 +279,32 @@ h3 {
   letter-spacing: -0.02em;
 }
 
+.manifesto {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.manifesto p {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+.manifesto-lede {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+
+.manifesto .hero-actions {
+  margin-top: 10px;
+}
+
 .featured-grid,
 .lab-grid,
 .method-grid {
@@ -290,8 +315,7 @@ h3 {
 
 .featured-card,
 .lab-card,
-.method-card,
-.writing-card {
+.method-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 24px;
@@ -309,8 +333,7 @@ h3 {
 
 .featured-card h3,
 .lab-card h3,
-.method-card h3,
-.writing-card h3 {
+.method-card h3 {
   margin-top: 14px;
   margin-bottom: 10px;
   font-size: 1.35rem;
@@ -318,8 +341,7 @@ h3 {
 
 .featured-card p,
 .lab-card p,
-.method-card p,
-.writing-card p {
+.method-card p {
   color: var(--muted);
 }
 
@@ -496,17 +518,6 @@ h3 {
   font-size: 1.6rem;
 }
 
-.writing-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-}
-
-.visual-card {
-  align-items: center;
-}
-
 footer {
   max-width: 1120px;
   margin: 0 auto;
@@ -572,15 +583,6 @@ footer {
   .lab-grid,
   .method-grid {
     grid-template-columns: 1fr;
-  }
-
-  .writing-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .visual-card {
-    align-items: flex-start;
   }
 
   .card-topline {
