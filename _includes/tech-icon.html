@@ -5,7 +5,13 @@ Renders one tech badge. Usage:
 {% assign tech = site.data.tech[include.key] %}
 {% if tech %}
 <span class="tech-badge tech-{{ tech.group }}" title="{{ tech.label }}">
+  {% if tech.icon_path %}
+  <span class="tech-mark tech-mark-logo" aria-hidden="true" style="background-color:#{{ tech.icon_hex }}">
+    <svg viewBox="0 0 24 24" width="13" height="13"><path fill="#fff" d="{{ tech.icon_path }}"/></svg>
+  </span>
+  {% else %}
   <span class="tech-mark" aria-hidden="true">{{ tech.abbr }}</span>
+  {% endif %}
   <span class="tech-label">{{ tech.label }}</span>
 </span>
 {% else %}
