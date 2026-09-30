@@ -312,132 +312,40 @@ if (heroSection) {
     await sleep(REDUCED ? 260 : 150);
   }
 
-  const chart = heroSection.querySelector('.chart');
-  const board = chart.querySelector('.board');
-  const wires = board.querySelector('.wires');
-  const tree = board.querySelector('.tree');
-  const links = [];
-  const show = el => requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('in')));
-  const follow = () => chart.scrollTo({ top: chart.scrollHeight, behavior: REDUCED ? 'auto' : 'smooth' });
-  function element(cls, html = ''){
-    const el = document.createElement('div');
-    el.className = cls;
-    el.innerHTML = html;
-    return el;
-  }
-  const row = () => tree.appendChild(element('row'));
-  function wire(from, to, cls = ''){
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path.setAttribute('pathLength', 1);
-    path.setAttribute('class', `wire ${cls}`);
-    wires.appendChild(path);
-    links.push({ from, to, path });
-    show(path);
-    return path;
-  }
-  function node(html, from, cls = ''){
-    const el = row().appendChild(element(`node ${cls}`, html));
-    if (from) wire(from, el, 'on');
-    show(el);
-    follow();
-    return el;
-  }
-  async function options(items, from){
-    const line = row();
-    const chips = [];
-    for (const { label, dot } of items){
-      const chip = line.appendChild(element('chip', dot ? `<i style="background:${dot}"></i>${label}` : label));
-      chip.wire = wire(from, chip);
-      chips.push(chip);
-      show(chip);
-      follow();
-      await sleep(REDUCED ? 0 : 90);
-    }
-    return chips;
-  }
-  async function choose(chips, pick){
-    if (!REDUCED){
-      const steps = 9 + rand(4);
-      for (let s = 0; s < steps; s++){
-        const lit = mod(pick - steps + 1 + s, chips.length);
-        chips.forEach((chip, k) => chip.classList.toggle('scan', k === lit));
-        await sleep(60 + s * s * 2.2);
-      }
-    }
-    chips.forEach((chip, k) => {
-      const chosen = k === pick;
-      chip.classList.remove('scan');
-      chip.classList.add(chosen ? 'pick' : 'off');
-      chip.wire.classList.add(chosen ? 'on' : 'off');
-    });
-    await sleep(REDUCED ? 200 : 350);
-    return chips[pick];
-  }
-  async function foldThrough(el, labels){
-    const pips = el.appendChild(element('pips', labels.map(t => `<b class="pip">${t}</b>`).join('')));
-    follow();
-    await sleep(REDUCED ? 150 : 300);
-    for (const pip of pips.children){
-      pip.classList.add('on');
-      await fold();
-    }
-  }
-  function drawWires(){
-    const o = board.getBoundingClientRect();
-    for (const { from, to, path } of links){
-      const a = from.getBoundingClientRect(), b = to.getBoundingClientRect();
-      const x1 = a.left + a.width / 2 - o.left, y1 = a.bottom - o.top;
-      const x2 = b.left + b.width / 2 - o.left, y2 = b.top - o.top;
-      const m = (y2 - y1) / 2;
-      path.setAttribute('d', `M${x1},${y1} C${x1},${y1 + m} ${x2},${y2 - m} ${x2},${y2}`);
-    }
-  }
-  async function clearChart(){
-    tree.classList.add('out');
-    wires.classList.add('out');
-    await sleep(REDUCED ? 0 : 420);
-    tree.replaceChildren();
-    wires.replaceChildren();
-    links.length = 0;
-    tree.classList.remove('out');
-    wires.classList.remove('out');
-    chart.scrollTo({ top: 0 });
-  }
-
-  async function pickNumber(from){
+  // No visible step-by-step panel here — this piece is now the hero's
+  // ambient background, so it just folds and reveals fortunes on a loop.
+  // The random colour/number picks still drive the real fold count and
+  // timing; only the DOM "reasoning trail" from the original CodePen
+  // (chips, wires, pips) was dropped.
+  async function pickNumber(){
     await faceMouth();
     const shown = VISIBLE[closed];
-    const k = rand(shown.length);
-    const chip = await choose(await options(shown.map(label => ({ label })), from), k);
-    return [shown[k], chip];
+    await sleep(REDUCED ? 150 : 850);
+    return shown[rand(shown.length)];
   }
   async function play(){
     await faceMouth();
-    const start = node('Start', null, 'start');
     await sleep(500);
     const c = rand(COLOURS.length);
-    const colour = await choose(await options(COLOURS.map(({ word, ink }) => ({ label: word, dot: ink })), start), c);
-    const spelled = node('', colour, 'bare');
-    await foldThrough(spelled, [...COLOURS[c].word]);
+    await sleep(REDUCED ? 150 : 1100);
+    for (const _ of COLOURS[c].word) await fold();
     await sleep(350);
 
-    const [count, countChip] = await pickNumber(spelled);
-    const counted = node('', countChip, 'bare');
-    await foldThrough(counted, Array.from({ length: count }, (_, k) => k + 1));
+    const count = await pickNumber();
+    for (let i = 0; i < count; i++) await fold();
     await sleep(350);
 
-    const [number, numberChip] = await pickNumber(counted);
+    const number = await pickNumber();
     const flap = flaps[faceOf(number)];
     const fortune = FORTUNES[rand(FORTUNES.length)];
     inscribe(flap, fortune);
     await faceFlap(flap);
     await openFlap(flap, 1, 900);
-    node(fortune.replace('\n', ' '), numberChip, 'fortune');
 
     await sleep(4200);
     await openFlap(flap, 0, 700);
     inscribe(flap);
-    await Promise.all([clearChart(), moveTo(OPEN, 600)]);
+    await moveTo(OPEN, 600);
     closed = null;
   }
 
@@ -448,7 +356,6 @@ if (heroSection) {
     camera.position.set(0, -view.dist * Math.cos(view.el), LOOK + view.dist * Math.sin(view.el));
     camera.lookAt(0, 0, LOOK);
     renderer.render(scene, camera);
-    drawWires();
     requestAnimationFrame(frame);
   }
   function resize(){
