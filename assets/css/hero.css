@@ -2,16 +2,6 @@
    Every custom property and selector below is namespaced under #cc-hero
    so it can never leak into the rest of the site's design system. */
 
-.hero-experiment-caption {
-  max-width: 560px;
-  color: var(--muted);
-  font-size: 0.88rem;
-  font-style: italic;
-  line-height: 1.6;
-  margin: 16px auto 0;
-  text-align: center;
-}
-
 #cc-hero {
   --cc-bg: #f9f1dc;
   --cc-blue: #2f5d62;
@@ -22,7 +12,8 @@
   position: relative;
   overflow: hidden;
   border-radius: 28px;
-  min-height: min(680px, 86vh);
+  min-height: max(620px, calc(100vh - 120px));
+  min-height: max(620px, calc(100svh - 120px));
   margin-top: 8px;
   padding: clamp(28px, 6vw, 64px);
   display: flex;
@@ -111,7 +102,7 @@
 
 @media (max-width: 760px) {
   #cc-hero {
-    min-height: min(720px, 130vw);
+    min-height: max(560px, calc(100svh - 90px));
     align-items: flex-end;
     padding: 24px;
   }

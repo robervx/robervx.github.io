@@ -9,15 +9,15 @@ hero: true
 <section class="about">
   <p class="eyebrow" data-es="Manifiesto" data-en="Manifesto">Manifiesto</p>
 
-  <h2 data-es="No vendo humo. Construyo criterio." data-en="No hype. Just better judgement.">
-    No vendo humo. Construyo criterio.
+  <h2 data-es="Construyo con la precisión de lo que no puede fallar." data-en="I build with the precision of things that can't fail.">
+    Construyo con la precisión de lo que no puede fallar.
   </h2>
 
   <p
-    data-es="Lo que ves aquí no es una vitrina de proyectos perfectos. Es el cuaderno donde convierto años de decidir con información incompleta —en la calle, en una sala de coordinación, delante de un dashboard a medio construir— en herramientas, datos y mejores preguntas. Lo que funciona, se queda. Lo que no, se cuenta igual."
-    data-en="What you see here isn't a showcase of perfect projects. It's the notebook where years of deciding with incomplete information — on the street, in a coordination room, in front of a half-built dashboard — turn into tools, data and better questions. What works, stays. What doesn't, gets said anyway."
+    data-es="No me conformo con que algo funcione «más o menos». Aplico el mismo estándar de precisión que exige un sistema sin margen de error a problemas que la seguridad pública lleva décadas resolviendo a medias: cómo se mueve una ciudad, cómo decide un equipo bajo presión, cómo un dato mal leído se convierte en una mala decisión. Cada proyecto de este laboratorio nace con esa ambición — construido para resistir la realidad, no una demo."
+    data-en="I don't settle for something that 'sort of' works. I apply the same precision a zero-margin-for-error system demands to problems public safety has been half-solving for decades: how a city moves, how a team decides under pressure, how a misread piece of data becomes a bad call. Every project in this lab starts with that ambition — built to survive reality, not just a demo."
   >
-    Lo que ves aquí no es una vitrina de proyectos perfectos. Es el cuaderno donde convierto años de decidir con información incompleta —en la calle, en una sala de coordinación, delante de un dashboard a medio construir— en herramientas, datos y mejores preguntas. Lo que funciona, se queda. Lo que no, se cuenta igual.
+    No me conformo con que algo funcione «más o menos». Aplico el mismo estándar de precisión que exige un sistema sin margen de error a problemas que la seguridad pública lleva décadas resolviendo a medias: cómo se mueve una ciudad, cómo decide un equipo bajo presión, cómo un dato mal leído se convierte en una mala decisión. Cada proyecto de este laboratorio nace con esa ambición — construido para resistir la realidad, no una demo.
   </p>
 
   <div class="principle">
@@ -76,13 +76,6 @@ hero: true
     </p>
   </div>
 
-  <div class="featured-grid">
-    {% assign featured = site.projects | where: "featured", true | sort: "date" | reverse %}
-    {% for project in featured %}
-      {% include project-card.html project=project variant="featured" %}
-    {% endfor %}
-  </div>
-
   <div class="filters">
     <button class="filter active" data-filter="all" data-es="Todo" data-en="All">Todo</button>
     <button class="filter" data-filter="data-visualization">Data Visualization</button>
@@ -94,10 +87,10 @@ hero: true
     <button class="filter" data-filter="product-thinking">Product Thinking</button>
   </div>
 
-  <div class="lab-grid">
-    {% assign lab_projects = site.projects | where_exp: "p", "p.featured != true" | sort: "date" | reverse %}
-    {% for project in lab_projects %}
-      {% include project-card.html project=project variant="lab" %}
+  <div class="project-grid">
+    {% assign all_projects = site.projects | sort: "date" | reverse %}
+    {% for project in all_projects %}
+      {% include project-card.html project=project %}
     {% endfor %}
   </div>
 </section>

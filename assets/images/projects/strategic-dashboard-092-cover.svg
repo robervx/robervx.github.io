@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Cuadro de Mando Estratégico 092 — próximamente">
+  <defs>
+    <linearGradient id="dgray" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e7e1d3"/>
+      <stop offset="1" stop-color="#d8d0bd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#dgray)"/>
+
+  <!-- faint KPI bars -->
+  <g opacity="0.5" fill="#a49a83">
+    <rect x="660" y="420" width="46" height="90"/>
+    <rect x="726" y="360" width="46" height="150"/>
+    <rect x="792" y="260" width="46" height="250"/>
+    <rect x="858" y="330" width="46" height="180"/>
+    <rect x="924" y="200" width="46" height="310"/>
+    <rect x="990" y="380" width="46" height="130"/>
+  </g>
+  <line x1="640" y1="510" x2="1060" y2="510" stroke="#8a7f66" stroke-width="2" opacity="0.5"/>
+
+  <rect x="70" y="480" width="150" height="26" rx="13" fill="#a49a83" opacity="0.35"/>
+  <text x="92" y="497" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#4a4434">Próximamente</text>
+
+  <text x="70" y="240" font-family="'Space Grotesk', Inter, sans-serif" font-size="32" font-weight="700" fill="#3c362c">Cuadro de Mando</text>
+  <text x="70" y="278" font-family="'Space Grotesk', Inter, sans-serif" font-size="32" font-weight="700" fill="#3c362c">Estratégico 092</text>
+  <text x="70" y="312" font-family="Inter, sans-serif" font-size="16" fill="#6b6350">Demanda, carga operativa y evolución temporal</text>
+</svg>

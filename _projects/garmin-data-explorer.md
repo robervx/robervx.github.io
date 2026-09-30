@@ -9,6 +9,7 @@ status: unavailable
 status_es: "No disponible"
 status_en: "Not available"
 featured: false
+cover_image: "/assets/images/projects/garmin-data-explorer-cover.svg"
 date: 2026-05-20
 tags: [personal-analytics, time-series, data-visualization, python, web-app, performance-data, longitudinal-analysis, product-thinking]
 tag_pills:

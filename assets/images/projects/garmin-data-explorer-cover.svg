@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Garmin Data Explorer — próximamente">
+  <defs>
+    <linearGradient id="ggray" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e7e1d3"/>
+      <stop offset="1" stop-color="#d8d0bd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ggray)"/>
+
+  <!-- faint heartrate / timeseries line -->
+  <polyline points="640,380 700,380 730,300 760,440 790,260 820,380 870,380 900,330 930,380 1130,380"
+    fill="none" stroke="#a49a83" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="0.6"/>
+  <g opacity="0.35" fill="none" stroke="#a49a83" stroke-width="2">
+    <line x1="640" y1="200" x2="640" y2="520"/>
+    <line x1="780" y1="200" x2="780" y2="520"/>
+    <line x1="920" y1="200" x2="920" y2="520"/>
+    <line x1="1060" y1="200" x2="1060" y2="520"/>
+  </g>
+
+  <rect x="70" y="480" width="150" height="26" rx="13" fill="#a49a83" opacity="0.35"/>
+  <text x="92" y="497" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#4a4434">Próximamente</text>
+
+  <text x="70" y="250" font-family="'Space Grotesk', Inter, sans-serif" font-size="38" font-weight="700" fill="#3c362c">Garmin Data Explorer</text>
+  <text x="70" y="282" font-family="Inter, sans-serif" font-size="16" fill="#6b6350">Rendimiento y hábitos a largo plazo desde 2015</text>
+</svg>

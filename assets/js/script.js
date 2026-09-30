@@ -1,7 +1,7 @@
 const languageToggle = document.getElementById("language-toggle");
 const translatableElements = document.querySelectorAll("[data-es][data-en]");
 const filterButtons = document.querySelectorAll(".filter");
-const labCards = document.querySelectorAll(".lab-card");
+const labCards = document.querySelectorAll(".project-card");
 
 function setLanguage(language) {
   translatableElements.forEach((element) => {
@@ -73,7 +73,7 @@ setLanguage(getInitialLanguage());
 // cheap periodic check (17 elements, a few times a second, only until
 // everything has been revealed once) can't miss one that way.
 const revealTargets = document.querySelectorAll(
-  ".featured-card, .lab-card, .method-step, .about-me-grid, .section-heading, .principle"
+  ".project-card, .method-step, .about-me-grid, .section-heading, .principle"
 );
 
 revealTargets.forEach((el) => el.classList.add("reveal"));
