@@ -91,7 +91,7 @@ if ("IntersectionObserver" in window) {
 }
 
 // --- Code block language label + copy button (project pages) ---------
-document.querySelectorAll(".highlighter-rouge").forEach((block) => {
+document.querySelectorAll("div.highlighter-rouge").forEach((block) => {
   const langClass = [...block.classList].find((c) => c.startsWith("language-"));
   const lang = langClass ? langClass.replace("language-", "") : "code";
   block.setAttribute("data-lang", lang);
