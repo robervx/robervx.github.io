@@ -67,7 +67,7 @@ setLanguage(getInitialLanguage());
 
 // --- Scroll reveal ---------------------------------------------------
 const revealTargets = document.querySelectorAll(
-  ".featured-card, .lab-card, .method-card, .writing-card, .signal-item, .section-heading, .principle"
+  ".featured-card, .lab-card, .method-step, .about-me-grid, .section-heading, .principle"
 );
 
 revealTargets.forEach((el) => el.classList.add("reveal"));

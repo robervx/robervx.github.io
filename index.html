@@ -5,50 +5,19 @@ hero: true
 ---
 {% include hero.html %}
 
-<!-- QUICK VISUAL STRIP -->
-<section class="signal-strip">
-  <article class="signal-item">
-    <span class="signal-icon">⌁</span>
-    <div>
-      <h3 data-es="Señales urbanas" data-en="Urban Signals">Señales urbanas</h3>
-      <p data-es="Fuentes abiertas, ciudad, contexto y demanda operativa." data-en="Open sources, city context and operational demand.">
-        Fuentes abiertas, ciudad, contexto y demanda operativa.
-      </p>
-    </div>
-  </article>
-
-  <article class="signal-item">
-    <span class="signal-icon">▣</span>
-    <div>
-      <h3 data-es="Datos y dashboards" data-en="Data & Dashboards">Datos y dashboards</h3>
-      <p data-es="KPIs, patrones temporales, visualización y apoyo a la decisión." data-en="KPIs, time patterns, visualization and decision support.">
-        KPIs, patrones temporales, visualización y apoyo a la decisión.
-      </p>
-    </div>
-  </article>
-
-  <article class="signal-item">
-    <span class="signal-icon">⬡</span>
-    <div>
-      <h3 data-es="Producto y método" data-en="Product & Method">Producto y método</h3>
-      <p data-es="Prototipos, MVPs, backlog, usuarios, adopción y aprendizaje." data-en="Prototypes, MVPs, backlog, users, adoption and learning.">
-        Prototipos, MVPs, backlog, usuarios, adopción y aprendizaje.
-      </p>
-    </div>
-  </article>
-</section>
-
-<!-- ABOUT -->
+<!-- MANIFESTO -->
 <section class="about">
-  <h2 data-es="En construcción, pero con dirección" data-en="In progress, but with direction">
-    En construcción, pero con dirección
+  <p class="eyebrow" data-es="Manifiesto" data-en="Manifesto">Manifiesto</p>
+
+  <h2 data-es="No vendo humo. Construyo criterio." data-en="No hype. Just better judgement.">
+    No vendo humo. Construyo criterio.
   </h2>
 
   <p
-    data-es="Este portfolio no pretende vender humo. Documenta una línea de aprendizaje aplicada: cómo convierto problemas reales en prototipos, cuadros de mando, campañas, herramientas y notas de proyecto."
-    data-en="This portfolio does not try to oversell. It documents an applied learning path: how I turn real problems into prototypes, dashboards, campaigns, tools and project notes."
+    data-es="Lo que ves aquí no es una vitrina de proyectos perfectos. Es el cuaderno donde convierto años de decidir con información incompleta —en la calle, en una sala de coordinación, delante de un dashboard a medio construir— en herramientas, datos y mejores preguntas. Lo que funciona, se queda. Lo que no, se cuenta igual."
+    data-en="What you see here isn't a showcase of perfect projects. It's the notebook where years of deciding with incomplete information — on the street, in a coordination room, in front of a half-built dashboard — turn into tools, data and better questions. What works, stays. What doesn't, gets said anyway."
   >
-    Este portfolio no pretende vender humo. Documenta una línea de aprendizaje aplicada: cómo convierto problemas reales en prototipos, cuadros de mando, campañas, herramientas y notas de proyecto.
+    Lo que ves aquí no es una vitrina de proyectos perfectos. Es el cuaderno donde convierto años de decidir con información incompleta —en la calle, en una sala de coordinación, delante de un dashboard a medio construir— en herramientas, datos y mejores preguntas. Lo que funciona, se queda. Lo que no, se cuenta igual.
   </p>
 
   <div class="principle">
@@ -59,21 +28,36 @@ hero: true
   </div>
 </section>
 
-<!-- CURRENT WORK -->
-<section id="current-work" class="section">
-  <div class="section-heading">
-    <p class="eyebrow" data-es="Ahora" data-en="Now">Ahora</p>
-    <h2 data-es="Trabajo actual" data-en="Current Work">Trabajo actual</h2>
-    <p data-es="Líneas vivas de trabajo donde estoy aprendiendo construyendo." data-en="Live work streams where I am learning by building.">
-      Líneas vivas de trabajo donde estoy aprendiendo construyendo.
-    </p>
-  </div>
+<!-- ABOUT ME -->
+<section id="about" class="section about-me">
+  <div class="about-me-grid">
+    <div class="about-me-avatar" aria-hidden="true">RC</div>
 
-  <div class="featured-grid">
-    {% assign featured = site.projects | where: "featured", true | sort: "date" | reverse %}
-    {% for project in featured %}
-      {% include project-card.html project=project variant="featured" %}
-    {% endfor %}
+    <div>
+      <p class="eyebrow" data-es="Sobre mí" data-en="About me">Sobre mí</p>
+      <h2 data-es="Soy Rober." data-en="I'm Rober.">Soy Rober.</h2>
+
+      <p
+        data-es="Trabajo en seguridad pública y, desde hace un tiempo, también en datos, inteligencia artificial y producto — no porque cambiara de vocación, sino porque son la misma vocación vista desde otro ángulo: entender mejor lo que pasa para decidir mejor."
+        data-en="I work in public safety and, for a while now, in data, AI and product too — not because I changed vocation, but because they're the same vocation seen from another angle: understanding things better in order to decide better."
+      >
+        Trabajo en seguridad pública y, desde hace un tiempo, también en datos, inteligencia artificial y producto — no porque cambiara de vocación, sino porque son la misma vocación vista desde otro ángulo: entender mejor lo que pasa para decidir mejor.
+      </p>
+
+      <p
+        data-es="Nadie me enseñó a programar en la academia. Aprendí a base de intentarlo, equivocarme delante de un notebook a las once de la noche, y volver a intentarlo. Lo mismo me pasó en la calle en su momento: la teoría ayuda, pero el criterio se hace a base de casos reales."
+        data-en="Nobody taught me to code at the academy. I learned it by trying, getting it wrong in front of a notebook at eleven at night, and trying again. The same thing happened to me on the street, back in the day: theory helps, but judgement is built case by case."
+      >
+        Nadie me enseñó a programar en la academia. Aprendí a base de intentarlo, equivocarme delante de un notebook a las once de la noche, y volver a intentarlo. Lo mismo me pasó en la calle en su momento: la teoría ayuda, pero el criterio se hace a base de casos reales.
+      </p>
+
+      <p
+        data-es="No tengo todas las respuestas, y este portfolio no pretende decir lo contrario. Es, simplemente, donde documento lo que voy aprendiendo — con la misma honestidad con la que me gustaría que alguien me contara a mí lo que sabe."
+        data-en="I don't have all the answers, and this portfolio doesn't pretend otherwise. It's simply where I document what I'm learning — with the same honesty I'd want someone else to use when telling me what they know."
+      >
+        No tengo todas las respuestas, y este portfolio no pretende decir lo contrario. Es, simplemente, donde documento lo que voy aprendiendo — con la misma honestidad con la que me gustaría que alguien me contara a mí lo que sabe.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -92,6 +76,13 @@ hero: true
     </p>
   </div>
 
+  <div class="featured-grid">
+    {% assign featured = site.projects | where: "featured", true | sort: "date" | reverse %}
+    {% for project in featured %}
+      {% include project-card.html project=project variant="featured" %}
+    {% endfor %}
+  </div>
+
   <div class="filters">
     <button class="filter active" data-filter="all" data-es="Todo" data-en="All">Todo</button>
     <button class="filter" data-filter="data-visualization">Data Visualization</button>
@@ -104,7 +95,7 @@ hero: true
   </div>
 
   <div class="lab-grid">
-    {% assign lab_projects = site.projects | sort: "date" | reverse %}
+    {% assign lab_projects = site.projects | where_exp: "p", "p.featured != true" | sort: "date" | reverse %}
     {% for project in lab_projects %}
       {% include project-card.html project=project variant="lab" %}
     {% endfor %}
@@ -124,70 +115,78 @@ hero: true
     </p>
   </div>
 
-  <div class="method-grid">
-    <article class="method-card">
-      <span class="method-number">01</span>
-      <h3 data-es="Definición del problema" data-en="Problem Definition">Definición del problema</h3>
-      <p
-        data-es="Antes de abrir un notebook, me obligo a escribir el problema en una frase que cualquiera entienda. Si no puedo, es que todavía no lo entiendo yo."
-        data-en="Before I open a notebook, I force myself to write the problem in one sentence anyone could understand. If I can't, it means I don't understand it yet either."
-      >
-        Antes de abrir un notebook, me obligo a escribir el problema en una frase que cualquiera entienda. Si no puedo, es que todavía no lo entiendo yo.
-      </p>
-      <div class="tags">
-        <span class="tag product">Product Discovery</span>
-        <span class="tag product">User Needs</span>
-        <span class="tag product">Problem Framing</span>
+  <div class="method-timeline">
+    <div class="method-step">
+      <div class="method-step-marker"><span>01</span></div>
+      <div class="method-step-body">
+        <h3 data-es="Definición del problema" data-en="Problem Definition">Definición del problema</h3>
+        <p
+          data-es="Antes de abrir un notebook, me obligo a escribir el problema en una frase que cualquiera entienda. Si no puedo, es que todavía no lo entiendo yo."
+          data-en="Before I open a notebook, I force myself to write the problem in one sentence anyone could understand. If I can't, it means I don't understand it yet either."
+        >
+          Antes de abrir un notebook, me obligo a escribir el problema en una frase que cualquiera entienda. Si no puedo, es que todavía no lo entiendo yo.
+        </p>
+        <div class="tags">
+          <span class="tag product">Product Discovery</span>
+          <span class="tag product">User Needs</span>
+          <span class="tag product">Problem Framing</span>
+        </div>
       </div>
-    </article>
+    </div>
 
-    <article class="method-card">
-      <span class="method-number">02</span>
-      <h3 data-es="Priorización y alcance" data-en="Prioritisation & Scope">Priorización y alcance</h3>
-      <p
-        data-es="Casi todas mis ideas nacen demasiado grandes. Aprender a cortarlas hasta que quepan en una semana de trabajo me ha servido más que cualquier framework de producto."
-        data-en="Almost all my ideas are born too big. Learning to cut them down until they fit in a week of work has taught me more than any product framework."
-      >
-        Casi todas mis ideas nacen demasiado grandes. Aprender a cortarlas hasta que quepan en una semana de trabajo me ha servido más que cualquier framework de producto.
-      </p>
-      <div class="tags">
-        <span class="tag product">MVP</span>
-        <span class="tag product">Roadmap</span>
-        <span class="tag product">Backlog</span>
+    <div class="method-step">
+      <div class="method-step-marker"><span>02</span></div>
+      <div class="method-step-body">
+        <h3 data-es="Priorización y alcance" data-en="Prioritisation & Scope">Priorización y alcance</h3>
+        <p
+          data-es="Casi todas mis ideas nacen demasiado grandes. Aprender a cortarlas hasta que quepan en una semana de trabajo me ha servido más que cualquier framework de producto."
+          data-en="Almost all my ideas are born too big. Learning to cut them down until they fit in a week of work has taught me more than any product framework."
+        >
+          Casi todas mis ideas nacen demasiado grandes. Aprender a cortarlas hasta que quepan en una semana de trabajo me ha servido más que cualquier framework de producto.
+        </p>
+        <div class="tags">
+          <span class="tag product">MVP</span>
+          <span class="tag product">Roadmap</span>
+          <span class="tag product">Backlog</span>
+        </div>
       </div>
-    </article>
+    </div>
 
-    <article class="method-card">
-      <span class="method-number">03</span>
-      <h3 data-es="Gestión del trabajo" data-en="Work Management">Gestión del trabajo</h3>
-      <p
-        data-es="Un backlog que nadie revisa no sirve de nada. Prefiero ciclos cortos y honestos: qué avanzó, qué se atascó y qué aprendí — cada semana, sin excepciones."
-        data-en="A backlog nobody reviews is worthless. I prefer short, honest cycles: what moved forward, what got stuck, and what I learned — every week, no exceptions."
-      >
-        Un backlog que nadie revisa no sirve de nada. Prefiero ciclos cortos y honestos: qué avanzó, qué se atascó y qué aprendí — cada semana, sin excepciones.
-      </p>
-      <div class="tags">
-        <span class="tag product">Kanban</span>
-        <span class="tag product">Scrum</span>
-        <span class="tag product">PDCA</span>
+    <div class="method-step">
+      <div class="method-step-marker"><span>03</span></div>
+      <div class="method-step-body">
+        <h3 data-es="Gestión del trabajo" data-en="Work Management">Gestión del trabajo</h3>
+        <p
+          data-es="Un backlog que nadie revisa no sirve de nada. Prefiero ciclos cortos y honestos: qué avanzó, qué se atascó y qué aprendí — cada semana, sin excepciones."
+          data-en="A backlog nobody reviews is worthless. I prefer short, honest cycles: what moved forward, what got stuck, and what I learned — every week, no exceptions."
+        >
+          Un backlog que nadie revisa no sirve de nada. Prefiero ciclos cortos y honestos: qué avanzó, qué se atascó y qué aprendí — cada semana, sin excepciones.
+        </p>
+        <div class="tags">
+          <span class="tag product">Kanban</span>
+          <span class="tag product">Scrum</span>
+          <span class="tag product">PDCA</span>
+        </div>
       </div>
-    </article>
+    </div>
 
-    <article class="method-card">
-      <span class="method-number">04</span>
-      <h3 data-es="Producto y adopción" data-en="Product & Adoption">Producto y adopción</h3>
-      <p
-        data-es="He visto herramientas técnicamente perfectas que nadie llegó a usar. Ahora empiezo casi todo preguntando quién lo va a usar mañana por la mañana, y por qué debería importarle."
-        data-en="I've seen technically perfect tools that nobody ever used. Now I start almost everything by asking who will use this tomorrow morning, and why they should care."
-      >
-        He visto herramientas técnicamente perfectas que nadie llegó a usar. Ahora empiezo casi todo preguntando quién lo va a usar mañana por la mañana, y por qué debería importarle.
-      </p>
-      <div class="tags">
-        <span class="tag product">UX Thinking</span>
-        <span class="tag comm">Communication</span>
-        <span class="tag product">Adoption</span>
+    <div class="method-step">
+      <div class="method-step-marker"><span>04</span></div>
+      <div class="method-step-body">
+        <h3 data-es="Producto y adopción" data-en="Product & Adoption">Producto y adopción</h3>
+        <p
+          data-es="He visto herramientas técnicamente perfectas que nadie llegó a usar. Ahora empiezo casi todo preguntando quién lo va a usar mañana por la mañana, y por qué debería importarle."
+          data-en="I've seen technically perfect tools that nobody ever used. Now I start almost everything by asking who will use this tomorrow morning, and why they should care."
+        >
+          He visto herramientas técnicamente perfectas que nadie llegó a usar. Ahora empiezo casi todo preguntando quién lo va a usar mañana por la mañana, y por qué debería importarle.
+        </p>
+        <div class="tags">
+          <span class="tag product">UX Thinking</span>
+          <span class="tag comm">Communication</span>
+          <span class="tag product">Adoption</span>
+        </div>
       </div>
-    </article>
+    </div>
   </div>
 </section>
 
@@ -231,7 +230,7 @@ hero: true
 <!-- IDEAS / SUBSTACK -->
 <section id="ideas" class="section">
   <div class="section-heading compact">
-    <p class="eyebrow" data-es="Manifiesto" data-en="Manifesto">Manifiesto</p>
+    <p class="eyebrow" data-es="Mi voz" data-en="My voice">Mi voz</p>
     <h2 data-es="El Puente Azul" data-en="El Puente Azul">El Puente Azul</h2>
   </div>
 
@@ -242,6 +241,13 @@ hero: true
       data-en="El Puente Azul was born from a simple idea: policing can be better."
     >
       El Puente Azul nace de una idea sencilla: la policía puede ser mejor.
+    </p>
+
+    <p
+      data-es="Aquí no solo cuento lo que construyo: aquí pienso en voz alta. Es mi lugar para aportar ideas que creo que merece la pena compartir."
+      data-en="Here I don't just show what I build: I think out loud. It's my place to put forward ideas I believe are worth sharing."
+    >
+      Aquí no solo cuento lo que construyo: aquí pienso en voz alta. Es mi lugar para aportar ideas que creo que merece la pena compartir.
     </p>
 
     <p
