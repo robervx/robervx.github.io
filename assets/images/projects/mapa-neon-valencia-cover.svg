@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Mapa nocturno de Valencia con calles en neón y focos de concentración por barrio">
+  <defs>
+    <radialGradient id="glowA" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#39e6c8" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#39e6c8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ff5da2" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#ff5da2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bgn" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0e17"/>
+      <stop offset="1" stop-color="#131a2b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgn)"/>
+
+  <!-- concentration glows -->
+  <circle cx="360" cy="420" r="180" fill="url(#glowA)"/>
+  <circle cx="820" cy="200" r="200" fill="url(#glowB)"/>
+  <circle cx="900" cy="470" r="140" fill="url(#glowA)"/>
+
+  <!-- neon street grid: main avenues -->
+  <g fill="none" stroke="#39e6c8" stroke-width="2.4" opacity="0.85">
+    <path d="M0 110 C 260 90, 520 160, 780 120 S 1080 60, 1200 100"/>
+    <path d="M0 300 C 300 260, 560 340, 860 300 S 1100 260, 1200 300"/>
+    <path d="M0 480 C 280 440, 600 520, 900 470 S 1120 430, 1200 460"/>
+    <path d="M150 0 C 180 160, 120 340, 200 630"/>
+    <path d="M560 0 C 520 200, 600 400, 540 630"/>
+    <path d="M960 0 C 920 220, 1000 420, 940 630"/>
+  </g>
+
+  <!-- secondary streets -->
+  <g fill="none" stroke="#7fc8e8" stroke-width="1" opacity="0.35">
+    <path d="M0 60 H1200 M0 190 H1200 M0 370 H1200 M0 560 H1200"/>
+    <path d="M320 0 V630 M700 0 V630 M1050 0 V630"/>
+  </g>
+
+  <!-- hotspot markers -->
+  <g fill="#ff5da2">
+    <circle cx="820" cy="200" r="6"/>
+    <circle cx="900" cy="470" r="6"/>
+    <circle cx="380" cy="430" r="5"/>
+  </g>
+  <g fill="#39e6c8">
+    <circle cx="360" cy="420" r="5"/>
+    <circle cx="200" cy="180" r="4"/>
+    <circle cx="640" cy="330" r="4"/>
+  </g>
+
+  <text x="70" y="90" font-family="Fraunces, Georgia, serif" font-size="34" font-weight="600" fill="#f4f6fb">Mapa de intervenciones por barrio</text>
+  <text x="70" y="122" font-family="Inter, sans-serif" font-size="16" fill="#9aa4bf">Flujos de concentración y zonas de atención · Valencia</text>
+</svg>

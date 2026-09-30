@@ -1,0 +1,16 @@
+{%- comment -%}
+Renders one tech badge. Usage:
+  {% include tech-icon.html key="python" %}
+{%- endcomment -%}
+{% assign tech = site.data.tech[include.key] %}
+{% if tech %}
+<span class="tech-badge tech-{{ tech.group }}" title="{{ tech.label }}">
+  <span class="tech-mark" aria-hidden="true">{{ tech.abbr }}</span>
+  <span class="tech-label">{{ tech.label }}</span>
+</span>
+{% else %}
+<span class="tech-badge" title="{{ include.key }}">
+  <span class="tech-mark" aria-hidden="true">{{ include.key | slice: 0, 2 | capitalize }}</span>
+  <span class="tech-label">{{ include.key }}</span>
+</span>
+{% endif %}

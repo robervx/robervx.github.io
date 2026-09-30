@@ -1,0 +1,19 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+{% assign page_title = page.title_es | default: page.title %}
+<title>{% if page_title %}{{ page_title }} · {{ site.title }}{% else %}{{ site.title }} | Public Safety · Urban Intelligence · Data & AI Lab{% endif %}</title>
+<meta name="description" content="{{ page.summary_es | default: page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}" />
+
+<link rel="icon" href="data:,">
+<link rel="canonical" href="{{ page.url | absolute_url }}" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+{% if page.layout == 'project' %}<link rel="stylesheet" href="{{ '/assets/css/project.css' | relative_url }}" />{% endif %}
+{% if page.hero %}<link rel="stylesheet" href="{{ '/assets/css/hero.css' | relative_url }}" />{% endif %}
+
+{% seo %}

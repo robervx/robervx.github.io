@@ -1,0 +1,100 @@
+# Tech-stack badges shown on project pages and cards.
+# Adding a new technology = adding one entry here, then referencing its key
+# from a project's front matter `tech:` list or via
+# {% include tech-icon.html key="python" %} inside the project body.
+#
+# group controls the badge color family (reuses the site's existing tag
+# palette): data | ai | urban | comm | product
+
+python:
+  label: "Python"
+  abbr: "Py"
+  group: data
+r:
+  label: "R"
+  abbr: "R"
+  group: data
+sql:
+  label: "SQL"
+  abbr: "SQL"
+  group: data
+postgresql:
+  label: "PostgreSQL"
+  abbr: "Pg"
+  group: data
+pandas:
+  label: "pandas"
+  abbr: "pd"
+  group: data
+numpy:
+  label: "NumPy"
+  abbr: "np"
+  group: data
+scikit-learn:
+  label: "scikit-learn"
+  abbr: "sk"
+  group: ai
+xgboost:
+  label: "XGBoost"
+  abbr: "XGB"
+  group: ai
+tidyverse:
+  label: "tidyverse"
+  abbr: "tv"
+  group: data
+ggplot2:
+  label: "ggplot2"
+  abbr: "gg"
+  group: data
+forecast-r:
+  label: "forecast (R)"
+  abbr: "fc"
+  group: data
+sf:
+  label: "sf (R)"
+  abbr: "sf"
+  group: urban
+leaflet:
+  label: "Leaflet"
+  abbr: "Lf"
+  group: urban
+plotly:
+  label: "Plotly"
+  abbr: "Pl"
+  group: data
+matplotlib:
+  label: "Matplotlib"
+  abbr: "mpl"
+  group: data
+jupyter:
+  label: "Jupyter"
+  abbr: "Jy"
+  group: product
+rmarkdown:
+  label: "R Markdown"
+  abbr: "Rmd"
+  group: product
+streamlit:
+  label: "Streamlit"
+  abbr: "St"
+  group: product
+qgis:
+  label: "QGIS"
+  abbr: "Qg"
+  group: urban
+geopandas:
+  label: "GeoPandas"
+  abbr: "gpd"
+  group: urban
+git:
+  label: "Git"
+  abbr: "Git"
+  group: product
+github:
+  label: "GitHub"
+  abbr: "GH"
+  group: product
+docker:
+  label: "Docker"
+  abbr: "Dk"
+  group: product
