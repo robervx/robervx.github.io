@@ -20,16 +20,16 @@ const W = 1024;
 const PAPER = '#fbee9e';
 const INK = '#2b2622';
 const COLOURS = [
-  { word: 'RED', ink: '#d23b27' },
-  { word: 'BLUE', ink: '#2a8bc5' },
-  { word: 'YELLOW', ink: '#eba314' },
-  { word: 'GREEN', ink: '#4faa43' }
+  { word: 'AGRESIÓN', ink: '#c23b2e' },
+  { word: 'TENSIÓN', ink: '#c98a2e' },
+  { word: 'DIÁLOGO', ink: '#2a72a8' },
+  { word: 'CALMA', ink: '#4f8a43' }
 ];
 const VISIBLE = { shut: [2, 3, 6, 7], swap: [1, 4, 5, 8] };
 const FORTUNES = [
-  'Hoy toca abrir\nun notebook.', 'Un dato oculto\nte espera.', 'Esa hipótesis\nmerece un test.', 'La ciudad tiene\nmás señal de\nla que parece.',
-  'Buen día para\nun modelo nuevo.', 'Revisa ese\noutlier.', 'La demanda de\nhoy será alta.', 'Confía en tus\ndashboards.',
-  'Documenta ese\nhallazgo ya.', 'Python o R,\nhoy manda R.', 'Guarda ese\nscript.', 'Una patrulla\nmás no sobra.'
+  'Escuchar a tiempo\nevita mucho.', 'No hay dos avisos\niguales.', 'La calma se nota\nmás que se explica.', 'A veces, estar\nes suficiente.',
+  'El protocolo ayuda,\npero no decide solo.', 'Cada aviso\nes una lectura nueva.', 'La tensión baja\nsi tú bajas primero.', 'Acertar es leer\na tiempo.',
+  'No siempre hay\nmanual para esto.', 'Una decisión,\nmuchas variables.', 'El silencio\ntambién comunica.', 'Hoy tocó\ndecidir rápido.'
 ];
 const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 

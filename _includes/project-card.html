@@ -8,11 +8,17 @@ Renders one project card. Usage:
 {% assign card_class = "lab-card" %}
 {% if variant == "featured" %}{% assign card_class = "featured-card" %}{% endif %}
 
-<article class="{{ card_class }}" data-tags="{{ p.tags | join: ' ' }}">
+<article class="{{ card_class }}" data-tags="{{ p.tags | join: ' ' }}" data-status="{{ p.status }}">
+  {% if variant == "featured" and p.cover_image %}
+  <div class="card-cover">
+    <img src="{{ p.cover_image | relative_url }}" alt="" loading="lazy" />
+  </div>
+  {% endif %}
+
   {% if variant == "featured" %}
   <div class="card-topline">
     <span class="status {{ p.status }}" data-es="{{ p.status_es }}" data-en="{{ p.status_en }}">{{ p.status_es }}</span>
-    <span class="small-label">{{ p.kicker | default: "Current Work" }}</span>
+    <span class="small-label">{{ p.kicker | default: "Destacado" }}</span>
   </div>
   {% else %}
   <span class="status {{ p.status }}" data-es="{{ p.status_es }}" data-en="{{ p.status_en }}">{{ p.status_es }}</span>
@@ -36,5 +42,8 @@ Renders one project card. Usage:
     {% endfor %}
   </div>
 
-  <a class="project-link" href="{{ p.url | relative_url }}" data-es="Ver proyecto →" data-en="View project →">Ver proyecto →</a>
+  <a class="project-link" href="{{ p.url | relative_url }}">
+    <span data-es="Ver proyecto" data-en="View project">Ver proyecto</span>
+    <span aria-hidden="true">→</span>
+  </a>
 </article>
