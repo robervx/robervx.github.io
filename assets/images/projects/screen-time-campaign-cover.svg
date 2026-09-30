@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Campaña sobre uso del móvil — próximamente">
+  <defs>
+    <linearGradient id="sgray" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e7e1d3"/>
+      <stop offset="1" stop-color="#d8d0bd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#sgray)"/>
+
+  <!-- faint phone silhouette -->
+  <g opacity="0.5">
+    <rect x="860" y="150" width="160" height="330" rx="26" fill="none" stroke="#a49a83" stroke-width="3"/>
+    <rect x="884" y="182" width="112" height="222" rx="4" fill="#a49a83" opacity="0.3"/>
+    <circle cx="940" cy="450" r="9" fill="none" stroke="#a49a83" stroke-width="3"/>
+  </g>
+
+  <rect x="70" y="480" width="150" height="26" rx="13" fill="#a49a83" opacity="0.35"/>
+  <text x="92" y="497" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#4a4434">Próximamente</text>
+
+  <text x="70" y="240" font-family="'Space Grotesk', Inter, sans-serif" font-size="32" font-weight="700" fill="#3c362c">Campaña sobre</text>
+  <text x="70" y="278" font-family="'Space Grotesk', Inter, sans-serif" font-size="32" font-weight="700" fill="#3c362c">uso del móvil</text>
+  <text x="70" y="312" font-family="Inter, sans-serif" font-size="16" fill="#6b6350">Comunicación, comportamiento y narrativa visual</text>
+</svg>

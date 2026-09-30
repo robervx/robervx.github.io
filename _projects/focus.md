@@ -9,6 +9,7 @@ status: unavailable
 status_es: "No disponible"
 status_en: "Not available"
 featured: false
+cover_image: "/assets/images/projects/focus-cover.svg"
 date: 2026-06-05
 tags: [product-thinking, focus, personal-operating-system, ai-assisted-development, ux-thinking, prototype, behaviour-design, project-management, ai]
 tag_pills:

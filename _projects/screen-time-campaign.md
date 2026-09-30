@@ -9,6 +9,7 @@ status: unavailable
 status_es: "No disponible"
 status_en: "Not available"
 featured: false
+cover_image: "/assets/images/projects/screen-time-campaign-cover.svg"
 date: 2026-02-14
 tags: [communication, behaviour-change, digital-wellbeing, campaign-design, storytelling, data-visualization, experiential-essay, web-app, product-thinking]
 tag_pills:

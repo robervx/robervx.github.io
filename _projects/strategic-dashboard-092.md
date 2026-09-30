@@ -9,6 +9,7 @@ status: unavailable
 status_es: "No disponible"
 status_en: "Not available"
 featured: false
+cover_image: "/assets/images/projects/strategic-dashboard-092-cover.svg"
 date: 2026-04-02
 tags: [dashboards, kpis, sql, emergency-calls, operational-demand, time-series, data-visualization, public-safety, decision-support, project-management]
 tag_pills:
