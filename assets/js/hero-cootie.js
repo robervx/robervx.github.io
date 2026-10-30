@@ -349,15 +349,29 @@ if (heroSection) {
     closed = null;
   }
 
+  // Rendering (WebGL + per-frame geometry rebuild) is the expensive part
+  // of this piece, so the loop only runs while the hero is actually on
+  // screen — otherwise it keeps spending CPU/GPU on a scene nobody can
+  // see, which is wasted work on every page that scrolls past it.
+  let visible = true;
+  let rafId = null;
   function frame(now){
+    if (!visible){ rafId = null; return; }
     advance(now);
     shape();
     spin.rotation.z = view.az - 3 * Math.PI / 4;
     camera.position.set(0, -view.dist * Math.cos(view.el), LOOK + view.dist * Math.sin(view.el));
     camera.lookAt(0, 0, LOOK);
     renderer.render(scene, camera);
-    requestAnimationFrame(frame);
+    rafId = requestAnimationFrame(frame);
   }
+  function startLoop(){
+    if (rafId === null) rafId = requestAnimationFrame(frame);
+  }
+  new IntersectionObserver(([entry]) => {
+    visible = entry.isIntersecting;
+    if (visible) startLoop();
+  }).observe(heroSection);
   function resize(){
     renderer.setSize(stage.clientWidth, stage.clientHeight);
     camera.aspect = stage.clientWidth / stage.clientHeight;
@@ -374,7 +388,7 @@ if (heroSection) {
     resize();
     new ResizeObserver(resize).observe(stage);
     orbit();
-    requestAnimationFrame(frame);
+    startLoop();
     for (;;) await play();
   })();
 }
