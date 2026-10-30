@@ -300,16 +300,16 @@ if (heroSection) {
     return tween(ms, k => { view.az = from + (az - from) * k; });
   }
   const nearest = (az, period) => az + Math.round((view.az - az) / period) * period;
-  const faceMouth = () => turnTo(nearest(closed === 'swap' ? MOUTH + Math.PI / 2 : MOUTH, Math.PI), 700);
+  const faceMouth = () => turnTo(nearest(closed === 'swap' ? MOUTH + Math.PI / 2 : MOUTH, Math.PI), 950);
   function faceFlap(flap){
     const P = pose(params);
     const n = normal(C, P.A[flap.a], P.O[flap.point]).multiplyScalar(flap.sign);
-    return turnTo(nearest(Math.PI / 4 - Math.atan2(n.y, n.x), 2 * Math.PI), 800);
+    return turnTo(nearest(Math.PI / 4 - Math.atan2(n.y, n.x), 2 * Math.PI), 1050);
   }
   async function fold(){
     closed = closed === 'shut' ? 'swap' : 'shut';
-    await moveTo(closed === 'shut' ? SHUT : SWAP, 350);
-    await sleep(REDUCED ? 260 : 150);
+    await moveTo(closed === 'shut' ? SHUT : SWAP, 520);
+    await sleep(REDUCED ? 260 : 240);
   }
 
   // No visible step-by-step panel here — this piece is now the hero's
@@ -340,12 +340,12 @@ if (heroSection) {
     const fortune = FORTUNES[rand(FORTUNES.length)];
     inscribe(flap, fortune);
     await faceFlap(flap);
-    await openFlap(flap, 1, 900);
+    await openFlap(flap, 1, 1100);
 
     await sleep(4200);
-    await openFlap(flap, 0, 700);
+    await openFlap(flap, 0, 850);
     inscribe(flap);
-    await moveTo(OPEN, 600);
+    await moveTo(OPEN, 800);
     closed = null;
   }
 
