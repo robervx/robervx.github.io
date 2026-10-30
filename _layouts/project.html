@@ -41,7 +41,13 @@
         </div>
       </header>
 
-      {% if page.cover_image %}
+      {% if page.cover_embed %}
+      <figure class="project-cover">
+        <div class="embed-wrap">
+          <iframe src="{{ page.cover_embed }}" title="{{ page.title_es }}" frameborder="0" scrolling="no" sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"></iframe>
+        </div>
+      </figure>
+      {% elsif page.cover_image %}
       <figure class="project-cover">
         <img src="{{ page.cover_image | relative_url }}" alt="{{ page.title_es }}" loading="lazy" />
       </figure>
