@@ -12,6 +12,7 @@ featured: false
 date: 2026-10-20
 kicker: "Data Visualization · Flourish"
 cover_image: /assets/images/projects/mas-renta-mas-quejas-cover.svg
+cover_embed: "https://flo.uri.sh/visualisation/30742178/embed"
 tags: [data-visualization, exploratory-analysis, open-data, flourish, excel, bubble-chart, public-participation, urban-intelligence]
 tag_pills:
   - { label: "Data Visualization", group: data }
@@ -92,12 +93,7 @@ Elegí esta técnica porque permite representar tres variables cuantitativas a l
 
 Construí la visualización en Flourish y fui ajustando el diseño en varias pasadas: reduje solapamientos entre burbujas, fijé el eje vertical en cero, cambié los nombres técnicos de las variables por textos legibles, seleccioné solo algunas etiquetas para no saturar el gráfico, usé una escala secuencial de color y acorté los textos de las ventanas emergentes. También unifiqué la terminología en torno a «quejas y sugerencias», para evitar la ambigüedad de expresiones más genéricas como «comunicaciones».
 
-## La visualización
-
-<div class="embed-wrap">
-  <iframe src="https://flo.uri.sh/visualisation/30742178/embed" title="¿Más renta, más quejas? — gráfico de burbujas, distritos de València 2023" frameborder="0" scrolling="no" sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"></iframe>
-</div>
-<p class="embed-caption" data-es="Visualización interactiva alojada en Flourish." data-en="Interactive visualisation hosted on Flourish.">Visualización interactiva alojada en Flourish. <a href="https://public.flourish.studio/visualisation/30742178/" target="_blank" rel="noopener">Verla a pantalla completa ↗</a></p>
+El resultado es la visualización interactiva de la portada — puedes explorarla ahí mismo, o <a href="https://public.flourish.studio/visualisation/30742178/" target="_blank" rel="noopener">verla a pantalla completa en Flourish ↗</a>.
 
 ## Lectura exploratoria
 

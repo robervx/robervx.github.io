@@ -141,24 +141,35 @@
   text-align: center;
 }
 
-.project-body .embed-wrap {
+.embed-wrap {
   position: relative;
   width: 100%;
   padding-bottom: 68%;
-  margin: 2.2em 0 0.6em;
-  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: 0 16px 36px rgba(31, 31, 31, 0.06);
 }
 
-.project-body .embed-wrap iframe {
+.embed-wrap iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+/* Inline embed inside the prose: gets its own card chrome, matching
+   how a figure image is framed there. */
+.project-body .embed-wrap {
+  margin: 2.2em 0 0.6em;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 16px 36px rgba(31, 31, 31, 0.06);
+}
+
+/* Cover embed: the figure already supplies the border/radius/shadow,
+   so the wrapper only needs to set the aspect ratio. */
+.project-cover .embed-wrap {
+  padding-bottom: 56%;
 }
 
 .project-body .embed-caption {
