@@ -5,6 +5,7 @@
 </head>
 <body>
   {% include nav.html %}
+  {% if page.hero %}{% include hero.html %}{% endif %}
 
   <main>
     {{ content }}
