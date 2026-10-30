@@ -66,42 +66,35 @@ filterButtons.forEach((button) => {
 setLanguage(getInitialLanguage());
 
 // --- Scroll reveal ---------------------------------------------------
-// A plain bounding-rect poll rather than IntersectionObserver or
-// scroll-event throttling: both can miss a discrete jump (anchor link,
-// Page Down/End, loading the page with a #hash already in the URL, a
-// fast fling) and leave a section permanently stuck at opacity:0. A
-// cheap periodic check (17 elements, a few times a second, only until
-// everything has been revealed once) can't miss one that way.
+// IntersectionObserver-driven: each target gets revealed the moment it
+// actually enters the viewport, however long that takes (anchor link,
+// slow read of the sections above, a tab left in the background). A
+// previous timed-poll version gave up checking after ~30s, which left
+// any card the visitor hadn't scrolled to by then stuck at opacity:0
+// forever — most visibly in the project grid, where only the cards
+// already on screen at load ever showed up.
 const revealTargets = document.querySelectorAll(
   ".project-card, .method-step, .about-me-grid, .section-heading, .principle"
 );
 
 revealTargets.forEach((el) => el.classList.add("reveal"));
 
-if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
   revealTargets.forEach((el) => el.classList.add("in"));
 } else {
-  const revealInView = () => {
-    const vh = window.innerHeight;
-    let remaining = false;
-    revealTargets.forEach((el) => {
-      if (el.classList.contains("in")) return;
-      const rect = el.getBoundingClientRect();
-      if (rect.top < vh + 150 && rect.bottom > -150) {
-        el.classList.add("in");
-      } else {
-        remaining = true;
-      }
-    });
-    return remaining;
-  };
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: "0px 0px -150px 0px" }
+  );
 
-  revealInView();
-  let attempts = 0;
-  const pollId = setInterval(() => {
-    attempts += 1;
-    if (!revealInView() || attempts > 150) clearInterval(pollId);
-  }, 200);
+  revealTargets.forEach((el) => observer.observe(el));
 }
 
 // --- Code block language label + copy button (project pages) ---------
