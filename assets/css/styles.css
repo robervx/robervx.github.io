@@ -1,7 +1,7 @@
 :root {
   --bg: #f6f3ee;
   --bg-alt: #efe9df;
-  --text: #1e1e1e;
+  --text: #161513;
   --muted: #66615b;
   --card: #ffffff;
   --border: #ddd6cc;
@@ -9,6 +9,9 @@
   --accent-dark: #213f43;
   --accent-soft: #e8f0ef;
   --terracotta: #b5654d;
+  --gold: #b9822f;
+  --gold-dark: #8f6321;
+  --gold-soft: #f3e6cf;
   --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -523,6 +526,7 @@ h3 {
 }
 
 .card-cover {
+  position: relative;
   margin: -26px -26px 20px;
   border-radius: 24px 24px 0 0;
   overflow: hidden;
@@ -533,6 +537,29 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.card-cover iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;
+}
+
+.featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--gold-soft);
+  color: var(--gold-dark);
 }
 
 .filters {

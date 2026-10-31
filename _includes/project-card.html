@@ -6,7 +6,11 @@ Usage: {% include project-card.html project=p %}
 {% assign p = include.project %}
 
 <article class="project-card" data-tags="{{ p.tags | join: ' ' }}" data-status="{{ p.status }}">
-  {% if p.cover_image %}
+  {% if p.cover_embed %}
+  <div class="card-cover">
+    <iframe src="{{ p.cover_embed }}" title="" tabindex="-1" aria-hidden="true" loading="lazy"></iframe>
+  </div>
+  {% elsif p.cover_image %}
   <div class="card-cover">
     <img src="{{ p.cover_image | relative_url }}" alt="" loading="lazy" />
   </div>
@@ -14,6 +18,7 @@ Usage: {% include project-card.html project=p %}
 
   <div class="card-topline">
     <span class="status {{ p.status }}" data-es="{{ p.status_es }}" data-en="{{ p.status_en }}">{{ p.status_es }}</span>
+    {% if p.featured %}<span class="featured-badge" data-es="★ Destacado" data-en="★ Featured">★ Destacado</span>{% endif %}
     {% if p.kicker %}<span class="small-label">{{ p.kicker }}</span>{% endif %}
   </div>
 
