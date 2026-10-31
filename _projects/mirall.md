@@ -2,8 +2,8 @@
 title: "Mirall"
 title_es: "Mirall"
 title_en: "Mirall"
-summary_es: "Mirall transforma información pública dispersa en una representación coherente de la ciudad: un mapa de Valencia en tiempo real que agrega movilidad, meteorología, calidad del aire, eventos e incidencias en un único panel — con datos públicos y abiertos, sin backend municipal detrás."
-summary_en: "Mirall turns scattered public information into a coherent picture of the city: a real-time map of Valencia that brings together mobility, weather, air quality, events and incidents in a single view — built entirely on open public data, with no city-hall backend behind it."
+summary_es: "Un mapa de Valencia en tiempo real que agrega movilidad, meteorología, calidad del aire, eventos e incidencias en un único panel — construido entero sobre datos públicos y abiertos, sin ningún backend municipal detrás."
+summary_en: "A real-time map of Valencia that brings together mobility, weather, air quality, events and incidents in a single view — built entirely on open public data, with no city-hall backend behind it."
 description: "Mirall: un mapa de Valencia en tiempo real que agrega movilidad, meteorología, calidad del aire, eventos e incidencias en un único panel, sobre datos públicos abiertos."
 status: in-progress
 status_es: "En desarrollo"
@@ -23,7 +23,7 @@ tech: [typescript, maplibre, deckgl, pwa, git]
 
 ## Qué es
 
-La misión de Mirall en una frase: transformar información pública dispersa en una representación coherente de la ciudad que permita comprender qué está ocurriendo y tomar mejores decisiones. En la práctica es un mapa en tiempo real de Valencia que agrega en un único panel movilidad, meteorología, calidad del aire, eventos e incidencias — todo sobre datos públicos y gratuitos, sin ningún backend municipal detrás.
+La información pública de la ciudad ya existe — solo que vive repartida en diez sitios y diez formatos distintos: un visor de tráfico aquí, un boletín de calidad del aire allá, un feed de incidencias en otro lugar. Mirall no genera datos nuevos: los junta en un único panel que se lee de un vistazo, y los actualiza en tiempo real.
 
 Es un proyecto abierto (MIT), sin marca institucional ni empresa detrás: cualquiera puede desplegarlo. Y no es un prototipo — a día de hoy **51 de 57 specs están en estado "Implemented"**. Hay bastante superficie ya construida y en uso.
 
