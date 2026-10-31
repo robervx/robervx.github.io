@@ -5,7 +5,7 @@ backend:
 
 site_url: https://robervx.github.io
 display_url: https://robervx.github.io
-logo_url: /assets/images/projects/mirall-cover.svg
+logo_url: /assets/images/favicon.svg
 
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"

@@ -11,7 +11,8 @@ status_en: "Exploratory"
 featured: false
 date: 2026-10-20
 kicker: "Data Visualization · Flourish"
-cover_image: /assets/images/projects/mas-renta-mas-quejas-cover.svg
+cover_image: /assets/images/projects/mas-renta-mas-quejas-cover.png
+image: /assets/images/projects/mas-renta-mas-quejas-cover.png
 cover_embed: "https://flo.uri.sh/visualisation/30742178/embed"
 tags: [data-visualization, exploratory-analysis, open-data, flourish, excel, bubble-chart, public-participation, urban-intelligence]
 tag_pills:

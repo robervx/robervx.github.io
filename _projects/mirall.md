@@ -11,7 +11,8 @@ status_en: "In progress"
 featured: true
 date: 2026-09-28
 kicker: "Urban Intelligence Platform"
-cover_image: /assets/images/projects/mirall-cover.svg
+cover_image: /assets/images/projects/mirall-cover.webp
+image: /assets/images/projects/mirall-cover.webp
 tags: [urban-intelligence, open-data, geospatial-analysis, data-visualization, real-time-data, civic-tech, product-thinking, decision-support]
 tag_pills:
   - { label: "Urban Intelligence", group: urban }
